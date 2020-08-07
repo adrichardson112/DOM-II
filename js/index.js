@@ -10,6 +10,7 @@ const parText = document.querySelectorAll("p");
 parText.forEach((p) => {
     p.addEventListener("mouseover", (e) => {
         e.target.style.color = "red";
+        e.stopPropagation();
     });
     p.addEventListener("mouseleave", (e) => {
         e.target.style.color = "black";
@@ -39,4 +40,24 @@ largeImg.forEach((p) => {
     p.addEventListener("wheel", (e) => {
         e.target.style.fontSize = "40px";
     });
+});
+
+goText = document.querySelectorAll("h2");
+goText.forEach((h2) => {
+    h2.addEventListener('dblclick', (e) => {
+        console.log('This is so neat!');
+        e.stopPropagation();
+    });
+});
+
+copyThis = document.querySelectorAll("p");
+copyThis.forEach((p) => {
+    p.addEventListener("copy", (ev) => {
+        alert("You copied text!");
+    });
+});
+
+allLinks = document.getElementsByTagName(".nav-link");
+allLinks.addEventListener("click", (e) => {
+    e.preventDefault();
 });
