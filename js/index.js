@@ -57,7 +57,9 @@ copyThis.forEach((p) => {
     });
 });
 
-allLinks = document.getElementsByTagName(".nav-link");
-allLinks.addEventListener("click", (e) => {
-    e.preventDefault();
+const Heads = document.querySelectorAll("h2");
+Heads.forEach((h2) => {
+    h2.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+    });
 });
